@@ -22,7 +22,7 @@ type RequestOptions = {
   body?: Record<string, unknown> | null;
 };
 
-const API_PREFIX = "/api";
+const API_PREFIX = import.meta.env.VITE_API_BASE_URL ?? "/api";
 
 const buildHeaders = (auth: ApiAuth, hasBody: boolean) => {
   const headers: Record<string, string> = {};
