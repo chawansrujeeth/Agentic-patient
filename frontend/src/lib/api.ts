@@ -23,6 +23,10 @@ type RequestOptions = {
 };
 
 const API_PREFIX = import.meta.env.VITE_API_BASE_URL ?? "/api";
+export const BACKEND_IDLE_MESSAGE =
+  "Backend is idle. Please wait a moment for it to wake up, then refresh.";
+
+const isBackendIdleStatus = (status: number) => [502, 503, 504].includes(status);
 
 const buildHeaders = (auth: ApiAuth, hasBody: boolean) => {
   const headers: Record<string, string> = {};
@@ -44,14 +48,22 @@ const buildHeaders = (auth: ApiAuth, hasBody: boolean) => {
 
 const apiFetch = async <T>(path: string, options: RequestOptions, auth: ApiAuth): Promise<T> => {
   const hasBody = Boolean(options.body);
-  const response = await fetch(`${API_PREFIX}${path}`, {
-    method: options.method ?? "GET",
-    headers: buildHeaders(auth, hasBody),
-    body: hasBody ? JSON.stringify(options.body) : undefined,
-  });
+  let response: Response;
+  try {
+    response = await fetch(`${API_PREFIX}${path}`, {
+      method: options.method ?? "GET",
+      headers: buildHeaders(auth, hasBody),
+      body: hasBody ? JSON.stringify(options.body) : undefined,
+    });
+  } catch {
+    throw new Error(BACKEND_IDLE_MESSAGE);
+  }
 
   if (!response.ok) {
     const text = await response.text();
+    if (isBackendIdleStatus(response.status)) {
+      throw new Error(BACKEND_IDLE_MESSAGE);
+    }
     throw new Error(text || "Request failed.");
   }
 

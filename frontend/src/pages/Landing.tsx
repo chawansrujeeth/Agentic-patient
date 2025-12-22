@@ -78,6 +78,11 @@ export default function Landing() {
             </button>
           </div>
 
+          <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-700">
+            Note: The backend can go idle on Render. If the first request fails, wait a moment for it to wake up,
+            then refresh the page.
+          </div>
+
           {error ? <p className="mt-4 text-sm text-rose-500">{error}</p> : null}
         </div>
       </div>

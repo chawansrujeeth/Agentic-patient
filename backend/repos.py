@@ -286,7 +286,7 @@ class MessageRepo:
     def list_last(self, session_id: str, n: int = 20) -> List[Dict[str, Any]]:
         rows = self.db.table(COL_MESSAGES).select(
             filters={"session_id": session_id},
-            order=("turn_index", "desc"),
+            order="visit_number.desc,turn_index.desc",
             limit=n,
         )
         items = [_message_row_to_doc(row) for row in rows]

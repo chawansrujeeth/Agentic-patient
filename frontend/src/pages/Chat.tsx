@@ -6,7 +6,7 @@ import CaseAutoStart from "../components/CaseAutoStart";
 import ChatBubble from "../components/ChatBubble";
 import LoadingIndicator from "../components/LoadingIndicator";
 import TopBar from "../components/TopBar";
-import { createSession, endVisit, getSession, sendMessage } from "../lib/api";
+import { BACKEND_IDLE_MESSAGE, createSession, endVisit, getSession, sendMessage } from "../lib/api";
 import type { ApiAuth, ChatMessage, SessionState } from "../lib/api";
 
 const VIRAL_CASE_IDS = [
@@ -94,6 +94,7 @@ export default function Chat() {
   const [isRestoring, setIsRestoring] = useState(false);
   const [busyLabel, setBusyLabel] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [showErrorModal, setShowErrorModal] = useState(false);
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
   const apiAuth: ApiAuth = useMemo(
@@ -136,13 +137,16 @@ export default function Chat() {
       setIsBusy(true);
       setBusyLabel("Restoring session...");
       setError(null);
+      setShowErrorModal(false);
       try {
         const data = await getSession(apiAuth, storedSessionId);
         setSessionId(data.session_id);
         setSessionState((prev) => mergeState(prev, data.state));
         setMessages(normalizeMessages(data.last_messages));
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Unable to restore session.");
+        const message = err instanceof Error ? err.message : "Unable to restore session.";
+        setError(message);
+        setShowErrorModal(true);
         clearStoredSessionId(auth);
       } finally {
         setIsRestoring(false);
@@ -155,8 +159,9 @@ export default function Chat() {
   }, [authReady, auth.mode, auth.guestId, auth.email, sessionId, isRestoring, apiAuth, storedSessionId]);
 
   const startSession = async (preferredCaseId?: string) => {
-    const targetCaseId = preferredCaseId ?? caseId;
+    const targetCaseId = getCaseIdForMode(auth.mode, preferredCaseId ?? caseId);
     setError(null);
+    setShowErrorModal(false);
     setIsBusy(true);
     setBusyLabel("Starting session...");
 
@@ -190,7 +195,9 @@ export default function Chat() {
     try {
       await attemptCreate(targetCaseId);
     } catch (err) {
-      setError(normalizeErrorMessage(err));
+      const message = normalizeErrorMessage(err);
+      setError(message);
+      setShowErrorModal(true);
     } finally {
       setIsBusy(false);
       setBusyLabel(null);
@@ -207,6 +214,7 @@ export default function Chat() {
     setIsBusy(true);
     setBusyLabel("Patient is responding...");
     setError(null);
+    setShowErrorModal(false);
 
     try {
       const response = await sendMessage(apiAuth, sessionId, trimmed);
@@ -221,7 +229,9 @@ export default function Chat() {
         setMessages((prev) => [...prev, { role: "patient", content: response.patient_message }]);
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Unable to send message.");
+      const message = err instanceof Error ? err.message : "Unable to send message.";
+      setError(message);
+      setShowErrorModal(true);
     } finally {
       setIsBusy(false);
       setBusyLabel(null);
@@ -233,6 +243,7 @@ export default function Chat() {
     setIsBusy(true);
     setBusyLabel("Ending visit...");
     setError(null);
+    setShowErrorModal(false);
 
     try {
       const response = await endVisit(apiAuth, sessionId);
@@ -245,7 +256,9 @@ export default function Chat() {
         setMessages(nextMessages);
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Unable to end visit.");
+      const message = err instanceof Error ? err.message : "Unable to end visit.";
+      setError(message);
+      setShowErrorModal(true);
     } finally {
       setIsBusy(false);
       setBusyLabel(null);
@@ -257,11 +270,14 @@ export default function Chat() {
     setIsBusy(true);
     setBusyLabel("Ending chat...");
     setError(null);
+    setShowErrorModal(false);
 
     try {
       await endVisit(apiAuth, sessionId);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Unable to end visit.");
+      const message = err instanceof Error ? err.message : "Unable to end visit.";
+      setError(message);
+      setShowErrorModal(true);
     } finally {
       clearStoredSessionId(auth);
       setSessionId(null);
@@ -296,6 +312,8 @@ export default function Chat() {
     setSessionId(null);
     setSessionState({});
     setMessages([]);
+    setError(null);
+    setShowErrorModal(false);
     await signOut();
   };
 
@@ -381,6 +399,32 @@ export default function Chat() {
 
         </div>
       </div>
+
+      {showErrorModal && error ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 px-6 py-10">
+          <div className="glass-panel w-full max-w-md p-6 text-center animate-rise">
+            <h3 className="text-xl font-semibold text-ink">
+              {error === BACKEND_IDLE_MESSAGE ? "Backend is waking up" : "Something went wrong"}
+            </h3>
+            <p className="mt-3 text-sm text-muted">
+              {error === BACKEND_IDLE_MESSAGE
+                ? BACKEND_IDLE_MESSAGE
+                : "Please refresh the page and try again."}
+            </p>
+            {error !== BACKEND_IDLE_MESSAGE ? (
+              <p className="mt-3 text-xs text-muted">{error}</p>
+            ) : null}
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <button className="btn-secondary" onClick={() => setShowErrorModal(false)}>
+                Dismiss
+              </button>
+              <button className="btn-primary" onClick={() => window.location.reload()}>
+                Refresh
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <CaseAutoStart
         enabled={authReady && auth.mode !== "none" && !sessionId && !isRestoring && !storedSessionId}
