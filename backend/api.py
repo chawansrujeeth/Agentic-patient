@@ -418,6 +418,13 @@ def create_app(*, init_db: bool = True, seed_cases: bool = True) -> Flask:
 
     @app.route(f"{API_PREFIX}/health", methods=["GET"])
     def health() -> Any:
+        check = request.args.get("check", "").strip().lower()
+        if check in {"supabase", "db"}:
+            try:
+                ping()
+            except Exception as exc:
+                return jsonify({"status": "error", "supabase": "error", "message": str(exc)}), 500
+            return jsonify({"status": "ok", "supabase": "ok"})
         return jsonify({"status": "ok"})
 
     return app
