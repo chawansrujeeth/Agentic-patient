@@ -1,0 +1,81 @@
+[
+  {
+    "case_id": "case_uti_basic_1",
+    "title": "Acute Dysuria and Frequency",
+    "dx": "Acute uncomplicated cystitis",
+    "chunks": [
+      {
+        "chunk_id": "case_uti_basic_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've had burning with urination and going more often since yesterday.",
+        "tags": ["baseline", "dysuria"]
+      },
+      {
+        "chunk_id": "case_uti_basic_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I'm a 28-year-old woman with no major medical problems.",
+        "tags": ["history", "demographics"]
+      },
+      {
+        "chunk_id": "case_uti_basic_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No fever, chills, or flank pain; just some lower abdominal pressure.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_uti_basic_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No vaginal discharge or new sexual partner.",
+        "tags": ["history", "gyne"]
+      },
+      {
+        "chunk_id": "case_uti_basic_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "Not pregnant; last period was a week ago. No medication allergies.",
+        "tags": ["history", "pregnancy"]
+      },
+      {
+        "chunk_id": "case_uti_basic_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I have not had a UTI before and I have been drinking less water lately.",
+        "tags": ["history", "risk_factors"]
+      },
+      {
+        "chunk_id": "case_uti_basic_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: afebrile, HR 82, BP 118/72. Mild suprapubic tenderness.",
+        "tags": ["exam", "abdomen"]
+      },
+      {
+        "chunk_id": "case_uti_basic_1_v1_s7",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm okay with an antibiotic like nitrofurantoin and will increase fluids; I will return if I develop fever, flank pain, or vomiting.",
+        "tags": ["plan", "treatment_acceptance"]
+      }
+    ]
+  }
+]

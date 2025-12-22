@@ -1,0 +1,941 @@
+[
+  {
+    "case_id": "case_diabetes_basic",
+    "title": "Follow-up: Type 2 Diabetes",
+    "dx": "Poorly controlled type 2 diabetes mellitus",
+    "chunks": [
+      {
+        "chunk_id": "case_diabetes_basic_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm here because my blood sugars have still been high even though I'm on metformin.",
+        "tags": ["baseline", "hyperglycemia"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "Diagnosed about five years ago; usually take metformin 1 gram twice daily but sometimes miss evening doses.",
+        "tags": ["history", "med_adherence"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Recent labs: A1c 8.9%, fasting glucose 178 mg/dL.",
+        "tags": ["labs", "a1c"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_v2_s0",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Vitals: BP 138/86, HR 82, BMI 31. Foot exam without ulcers but mild decreased sensation.",
+        "tags": ["exam", "neuropathy"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_v2_s1",
+        "visit_no": 2,
+        "stage": 1,
+        "kind": "plan",
+        "detail_depth": 3,
+        "content": "Discuss possible addition of GLP-1 agonist, reinforce lifestyle goals, and review hypoglycemia precautions.",
+        "tags": ["plan", "med_adjustment"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_flu_like",
+    "title": "Acute Flu-like Illness",
+    "dx": "Influenza-like viral syndrome",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_flu_like_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've had fever, chills, and achy muscles for three days.",
+        "tags": ["baseline", "fever"]
+      },
+      {
+        "chunk_id": "case_flu_like_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "No chronic illnesses, took ibuprofen with partial relief, had a coworker sick last week.",
+        "tags": ["history", "exposure"]
+      },
+      {
+        "chunk_id": "case_flu_like_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Exam: Temp 38.4 C, pulse 96, throat mildly erythematous without exudate, lungs clear.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_flu_like_v1_s3",
+        "visit_no": 1,
+        "stage": 3,
+        "kind": "tests",
+        "detail_depth": 3,
+        "content": "Rapid influenza test pending; CBC deferred unless symptoms worsen.",
+        "tags": ["tests", "influenza"]
+      },
+      {
+        "chunk_id": "case_flu_like_v2_s0",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "Provide return precautions, hydration guidance, and discuss antiviral therapy window.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_diabetes_basic_1",
+    "title": "Follow-up: Type 2 Diabetes",
+    "dx": "Poorly controlled type 2 diabetes mellitus",
+    "chunks": [
+      {
+        "chunk_id": "case_diabetes_basic_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm here because my blood sugars have still been high even though I'm on metformin.",
+        "tags": ["baseline", "hyperglycemia"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "Diagnosed about five years ago; usually take metformin 1 gram twice daily but sometimes miss evening doses.",
+        "tags": ["history", "med_adherence"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 1,
+        "content": "Recent labs: A1c 8.9%, fasting glucose 178 mg/dL.",
+        "tags": ["labs", "a1c"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_1_v2_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: BP 138/86, HR 82, BMI 31. Foot exam without ulcers but mild decreased sensation.",
+        "tags": ["exam", "neuropathy"]
+      },
+      {
+        "chunk_id": "case_diabetes_basic_1_v2_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "Discuss possible addition of GLP-1 agonist, reinforce lifestyle goals, and review hypoglycemia precautions.",
+        "tags": ["plan", "med_adjustment"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_diabetes_adherence_1",
+    "title": "Follow-up: Type 2 Diabetes With Adherence Issues",
+    "dx": "Poorly controlled type 2 diabetes mellitus",
+    "chunks": [
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm here because my blood sugars are still high even though I'm on metformin.",
+        "tags": ["baseline", "hyperglycemia"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "Diagnosed about six years ago; I take metformin 1 gram twice daily but miss the evening dose about 2-3 times per week.",
+        "tags": ["history", "med_adherence"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I check my blood sugar three to four times a week, usually fasting in the morning; it's often 160-200 mg/dL.",
+        "tags": ["history", "glucose_monitoring"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I haven't had nausea, diarrhea, or stomach upset from metformin.",
+        "tags": ["history", "med_tolerance"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "Diet is mixed: I often skip breakfast, have a sandwich for lunch, and dinner is usually rice or pasta; I drink one or two sodas per day and don't exercise regularly.",
+        "tags": ["history", "diet", "lifestyle"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 1,
+        "content": "Recent labs: A1c 9.2%, fasting glucose 185 mg/dL, creatinine 0.9 mg/dL.",
+        "tags": ["labs", "a1c"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: BP 142/88, HR 80, BMI 32. Foot exam without ulcers, mild decreased sensation in toes.",
+        "tags": ["exam", "neuropathy"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v1_s7",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "Discuss adherence strategies, consider adding a GLP-1 agonist, and reinforce lifestyle goals and hypoglycemia precautions.",
+        "tags": ["plan", "med_adjustment"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v2_s0",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 2,
+        "content": "I tried to be more consistent with metformin and cut down on soda, but my sugars are still higher than I'd like.",
+        "tags": ["baseline", "followup"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v2_s1",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I'm missing the evening dose about once per week now, and I check fasting sugars most mornings.",
+        "tags": ["history", "med_adherence"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v2_s2",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "Fasting readings are usually 140-170 mg/dL; after meals it can be 180-220 mg/dL.",
+        "tags": ["history", "glucose_monitoring"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v2_s3",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I started walking 20 minutes after dinner about 4 days a week and cut soda to weekends only.",
+        "tags": ["history", "lifestyle"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v2_s4",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Repeat labs this month: A1c 8.6%, fasting glucose 165 mg/dL, urine microalbumin negative.",
+        "tags": ["labs", "a1c"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v2_s5",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Vitals: BP 136/84, HR 78, BMI 31. No new foot ulcers; sensation unchanged.",
+        "tags": ["exam", "neuropathy"]
+      },
+      {
+        "chunk_id": "case_diabetes_adherence_1_v2_s6",
+        "visit_no": 2,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "Consider adding a GLP-1 agonist, continue exercise goals, and review home glucose targets.",
+        "tags": ["plan", "med_adjustment"]
+      }
+    ]
+  }
+  ,
+  {
+    "case_id": "case_viral_headache_1",
+    "title": "Mild Headache and Body Aches",
+    "dx": "Viral syndrome (self-limited)",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_headache_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've had a mild headache and some body aches for the last day or two.",
+        "tags": ["baseline", "headache", "myalgias"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No severe headache, no neck stiffness, no vision changes, and no weakness or numbness.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've also had a mild sore throat and a runny nose, and I felt a little warm last night.",
+        "tags": ["history", "uri"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No vomiting or diarrhea. I've been sleeping poorly and not drinking as much water.",
+        "tags": ["history", "hydration"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I don't have chronic medical conditions and I'm not on any daily medications. No drug allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.5 F, HR 88, BP 120/76. Neuro exam normal; no neck rigidity.",
+        "tags": ["exam", "neuro"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm okay with supportive care like fluids, rest, and acetaminophen or ibuprofen; I will return if I develop high fever, severe headache, stiff neck, or confusion.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_sore_throat_1",
+    "title": "Sore Throat and Low-Grade Fever",
+    "dx": "Viral pharyngitis",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_sore_throat_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "My throat has been sore for about two days, and swallowing is a bit painful.",
+        "tags": ["baseline", "sore_throat"]
+      },
+      {
+        "chunk_id": "case_viral_sore_throat_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No trouble breathing, no drooling, no muffled voice, and no stiff neck.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_sore_throat_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've had a runny nose and a mild cough, and my voice is a little hoarse.",
+        "tags": ["history", "uri"]
+      },
+      {
+        "chunk_id": "case_viral_sore_throat_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I took acetaminophen once, which helped some. No medication allergies.",
+        "tags": ["history", "meds"]
+      },
+      {
+        "chunk_id": "case_viral_sore_throat_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No rash, no vomiting or diarrhea. I don't have chronic medical problems.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_sore_throat_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.8 F, HR 84, BP 118/72. Throat mildly red without exudate; lungs clear.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_sore_throat_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "That plan works for me. I'll do fluids, rest, salt-water gargles, and use acetaminophen or ibuprofen; I'll return if I get high fever, worsening pain, or trouble swallowing.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_gi_1",
+    "title": "Acute Nausea and Diarrhea",
+    "dx": "Viral gastroenteritis (self-limited)",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_gi_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "Since last night I've had nausea and watery diarrhea.",
+        "tags": ["baseline", "gi"]
+      },
+      {
+        "chunk_id": "case_viral_gi_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No blood in the stool, no black stools, and no severe abdominal pain.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_gi_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I had some mild cramping and felt a little warm, and a family member was sick two days ago.",
+        "tags": ["history", "exposure"]
+      },
+      {
+        "chunk_id": "case_viral_gi_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've been able to sip fluids and have urinated twice today.",
+        "tags": ["history", "hydration"]
+      },
+      {
+        "chunk_id": "case_viral_gi_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No chronic medical issues and no medication allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_gi_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.3 F, HR 92, BP 110/70. Abdomen soft with mild diffuse tenderness.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_gi_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I can do oral rehydration and a bland diet, and I'm okay using an anti-diarrheal if needed; I'll come back if I can't keep fluids down, get high fever, or see blood.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_cough_1",
+    "title": "Dry Cough and Chest Congestion",
+    "dx": "Viral upper respiratory infection",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_cough_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've had a dry cough and a scratchy throat for about three days.",
+        "tags": ["baseline", "cough"]
+      },
+      {
+        "chunk_id": "case_viral_cough_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No shortness of breath, no chest pain, and no wheezing.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_cough_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I have a runny nose and some post-nasal drip, but no high fever.",
+        "tags": ["history", "uri"]
+      },
+      {
+        "chunk_id": "case_viral_cough_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I used an over-the-counter cough syrup once with mild relief.",
+        "tags": ["history", "meds"]
+      },
+      {
+        "chunk_id": "case_viral_cough_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No chronic lung disease and no medication allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_cough_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.1 F, HR 86, BP 122/78. Lungs clear without wheezes.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_cough_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "That sounds good. I'll use fluids, rest, honey or lozenges, and acetaminophen if needed, and I will return if I develop shortness of breath or high fever.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_sinus_1",
+    "title": "Sinus Pressure and Nasal Congestion",
+    "dx": "Viral rhinosinusitis",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_sinus_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've had nasal congestion with pressure around my cheeks for four days.",
+        "tags": ["baseline", "sinus"]
+      },
+      {
+        "chunk_id": "case_viral_sinus_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No severe headache, no vision changes, and no swelling around my eyes.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_sinus_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've had thick nasal drainage and a mild cough at night from post-nasal drip.",
+        "tags": ["history", "uri"]
+      },
+      {
+        "chunk_id": "case_viral_sinus_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I tried a saline spray once and it helped a little.",
+        "tags": ["history", "meds"]
+      },
+      {
+        "chunk_id": "case_viral_sinus_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No chronic medical problems and no medication allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_sinus_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.4 F, HR 80, BP 116/74. Mild tenderness over maxillary sinuses.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_sinus_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm okay with supportive care like fluids, rest, saline rinses, and pain relief; I'll return if symptoms worsen or I develop high fever.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_fatigue_1",
+    "title": "Fatigue and Low-Grade Fever",
+    "dx": "Viral syndrome (fatigue predominant)",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_fatigue_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've been unusually tired with mild body aches for two days.",
+        "tags": ["baseline", "fatigue"]
+      },
+      {
+        "chunk_id": "case_viral_fatigue_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No chest pain, no shortness of breath, and no fainting.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_fatigue_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I felt a little warm last night and had a mild headache, but no severe symptoms.",
+        "tags": ["history", "fever"]
+      },
+      {
+        "chunk_id": "case_viral_fatigue_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've been sleeping less than usual and drinking less water.",
+        "tags": ["history", "hydration"]
+      },
+      {
+        "chunk_id": "case_viral_fatigue_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No chronic medical conditions and no medication allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_fatigue_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.6 F, HR 82, BP 118/76. Exam otherwise normal.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_fatigue_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "That sounds good. I'll rest, hydrate, and use acetaminophen if needed, and I'll return if I develop high fever or worsening symptoms.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_conjunctivitis_1",
+    "title": "Red, Itchy Eyes",
+    "dx": "Viral conjunctivitis",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_conjunctivitis_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "My eyes have been red and itchy since yesterday, and they feel gritty.",
+        "tags": ["baseline", "eye"]
+      },
+      {
+        "chunk_id": "case_viral_conjunctivitis_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No vision loss, no severe eye pain, and no light sensitivity.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_conjunctivitis_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "It started in one eye and spread to the other, and there's a watery discharge.",
+        "tags": ["history", "eye"]
+      },
+      {
+        "chunk_id": "case_viral_conjunctivitis_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I had a runny nose this week and a coworker had pink eye.",
+        "tags": ["history", "exposure"]
+      },
+      {
+        "chunk_id": "case_viral_conjunctivitis_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No contact lens use and no medication allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_conjunctivitis_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 98.9 F, HR 78, BP 116/70. Eyes are red with watery discharge.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_conjunctivitis_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm fine with supportive care like cool compresses, artificial tears, and hand hygiene; I'll return if vision changes or pain worsens.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_exanthem_1",
+    "title": "Itchy Rash After Fever",
+    "dx": "Viral exanthem",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_exanthem_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I developed an itchy rash on my trunk this morning after a low fever yesterday.",
+        "tags": ["baseline", "rash"]
+      },
+      {
+        "chunk_id": "case_viral_exanthem_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No swelling of my lips or tongue, no trouble breathing, and no fainting.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_exanthem_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "The rash is flat and blotchy and is spreading to my arms, but not my palms or soles.",
+        "tags": ["history", "rash"]
+      },
+      {
+        "chunk_id": "case_viral_exanthem_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I had a mild sore throat earlier in the week and no new foods or detergents.",
+        "tags": ["history", "exposure"]
+      },
+      {
+        "chunk_id": "case_viral_exanthem_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No chronic conditions and no medication allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_exanthem_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.2 F, HR 84, BP 120/74. Maculopapular rash on trunk and arms.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_exanthem_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "That plan works for me. I'll use cool showers and an oral antihistamine, and I'll return if I get facial swelling or trouble breathing.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_viral_earache_1",
+    "title": "Ear Pressure and Fullness",
+    "dx": "Viral eustachian tube dysfunction",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_earache_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "My right ear feels blocked and achy since I had a cold.",
+        "tags": ["baseline", "ear"]
+      },
+      {
+        "chunk_id": "case_viral_earache_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No severe ear pain, no drainage, and no dizziness or balance problems.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_earache_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I can still hear, but it's muffled, and I feel pressure when I swallow.",
+        "tags": ["history", "ear"]
+      },
+      {
+        "chunk_id": "case_viral_earache_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No recent swimming and no ear trauma.",
+        "tags": ["history", "exposure"]
+      },
+      {
+        "chunk_id": "case_viral_earache_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No chronic medical problems and no medication allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_earache_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 98.8 F, HR 76, BP 118/72. Ear canal clear; mild nasal congestion.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_viral_earache_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm okay with supportive care like nasal saline, steam, and pain relief; I'll return if I develop fever, worsening pain, or drainage.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  }
+]

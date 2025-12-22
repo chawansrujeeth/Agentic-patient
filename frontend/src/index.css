@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --color-ink: 20 24 33;
+  --color-muted: 88 97 110;
+  --color-card: 255 255 255;
+  --color-accent: 24 129 108;
+  --color-accent-2: 232 115 76;
+  --color-border: 218 225 232;
+  --color-wash: 244 240 232;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Work Sans", sans-serif;
+  color: rgb(var(--color-ink));
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(255, 255, 255, 0.85), transparent 60%),
+    radial-gradient(900px 600px at 90% 8%, rgba(255, 214, 170, 0.5), transparent 55%),
+    linear-gradient(135deg, rgb(var(--color-wash)), #ffffff);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(24, 129, 108, 0.25);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Sora", sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/70 bg-white/70 shadow-soft backdrop-blur-xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition duration-200 hover:-translate-y-0.5 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-border bg-white/70 px-6 py-3 text-sm font-semibold text-ink transition duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-border bg-transparent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-muted transition duration-200 hover:border-accent/30 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/30 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .input-shell {
+    @apply flex w-full items-center gap-3 rounded-2xl border border-white/60 bg-white/80 px-4 py-3 shadow-inner shadow-black/5 focus-within:border-accent/40;
+  }
+
+  .tab-pill {
+    @apply rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wide transition duration-200;
+  }
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@layer utilities {
+  .animate-rise {
+    animation: rise 0.35s ease-out;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 1.6s ease-in-out infinite;
+  }
+}

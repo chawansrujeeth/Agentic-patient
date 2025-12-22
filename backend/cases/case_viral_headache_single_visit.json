@@ -1,0 +1,73 @@
+[
+  {
+    "case_id": "case_viral_headache_1",
+    "title": "Mild Headache and Body Aches",
+    "dx": "Viral syndrome (self-limited)",
+    "case_type": "viral_cases",
+    "chunks": [
+      {
+        "chunk_id": "case_viral_headache_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've had a mild headache and some body aches for the last day or two.",
+        "tags": ["baseline", "headache", "myalgias"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No severe headache, no neck stiffness, no vision changes, and no weakness or numbness.",
+        "tags": ["history", "red_flags"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've also had a mild sore throat and a runny nose, and I felt a little warm last night.",
+        "tags": ["history", "uri"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "No vomiting or diarrhea. I've been sleeping poorly and not drinking as much water.",
+        "tags": ["history", "hydration"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I don't have chronic medical conditions and I'm not on any daily medications. No drug allergies.",
+        "tags": ["history", "pmh"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 99.5 F, HR 88, BP 120/76. Neuro exam normal; no neck rigidity.",
+        "tags": ["exam", "neuro"]
+      },
+      {
+        "chunk_id": "case_viral_headache_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm okay with supportive care like fluids, rest, and acetaminophen or ibuprofen; I will return if I develop high fever, severe headache, stiff neck, or confusion.",
+        "tags": ["plan", "supportive_care"]
+      }
+    ]
+  }
+]
