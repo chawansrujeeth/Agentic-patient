@@ -297,8 +297,7 @@
         "tags": ["plan", "med_adjustment"]
       }
     ]
-  }
-  ,
+  },
   {
     "case_id": "case_viral_headache_1",
     "title": "Mild Headache and Body Aches",
@@ -935,6 +934,1332 @@
         "detail_depth": 1,
         "content": "I'm okay with supportive care like nasal saline, steam, and pain relief; I'll return if I develop fever, worsening pain, or drainage.",
         "tags": ["plan", "supportive_care"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_acute_pyelonephritis_1",
+    "title": "Fever and Bilateral Flank Pain",
+    "dx": "Acute pyelonephritis",
+    "difficulty": "Medium",
+    "tags": ["UTI", "Kidney", "Infection", "Emergency Medicine"],
+    "short_prompt": "27-year-old woman with 2 days of fever and worsening bilateral loin pain with vomiting. Determine the likely diagnosis and initial ED investigations/management.",
+    "estimated_time_min": 20,
+    "version": 1,
+    "is_published": true,
+    "chunks": [
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s0",
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm a 27-year-old woman and I've had a fever with worsening pain across my back (both sides) for the last two days.",
+        "tags": ["baseline", "fever", "flank_pain"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s1",
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "It started as an ache in my back, but the pain has become progressively more severe.",
+        "tags": ["history", "pain_progression"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s2",
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've felt nauseated and I've vomited twice in the last 6 hours.",
+        "tags": ["history", "vomiting"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s3",
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I don't have any significant past medical history, but I did have an uncomplicated episode of cystitis about 3 months ago.",
+        "tags": ["history", "uti_history"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s4",
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Vitals: temp 39.5 C, HR 120, BP 104/68. I look unwell and flushed.",
+        "tags": ["exam", "vitals", "tachycardia", "fever"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s5",
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Abdomen is generally tender, but most markedly in both loins. Bowel sounds are normal; heart and lung exams are unremarkable.",
+        "tags": ["exam", "abdomen", "loin_tenderness"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s6",
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 1,
+        "content": "Urinalysis: ++ protein; +++ blood; ++ nitrites.",
+        "tags": ["tests", "urinalysis", "nitrites", "hematuria"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s7",
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 1,
+        "content": "Urine microscopy: >50 red cells; >50 white cells.",
+        "tags": ["tests", "microscopy", "pyuria", "hematuria"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s8",
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 1,
+        "content": "Bloods: WCC 25.2 x 10^9/L, platelets 406 x 10^9/L, sodium 134 mmol/L, urea 14.2 mmol/L, creatinine 106 umol/L, CRP 316 mg/L.",
+        "tags": ["tests", "cbc", "crp", "renal_function"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s9",
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 1,
+        "content": "Abdominal X-ray: normal.",
+        "tags": ["tests", "imaging", "xray"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s10",
+        "stage": 1,
+        "kind": "tests",
+        "detail_depth": 1,
+        "content": "Renal ultrasound has been requested to assess for urinary tract obstruction; results are pending.",
+        "tags": ["tests", "imaging", "ultrasound"]
+      },
+      {
+        "chunk_id": "case_acute_pyelonephritis_1_v1_s11",
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm happy to stay in hospital and have IV fluids and antibiotics if needed; I mainly want the pain and nausea controlled.",
+        "tags": ["plan", "admission", "treatment_acceptance"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_myasthenia_gravis_1",
+    "title": "Double Vision Worse in the Evenings",
+    "dx": "Myasthenia gravis",
+    "difficulty": "Medium",
+    "tags": ["Neurology", "Ophthalmology", "Autoimmune", "General Medicine"],
+    "short_prompt": "43-year-old woman with 3 months of evening-worse diplopia, ptosis, neck weakness, and fatigable chewing/voice changes. Identify the diagnosis, key differentials, and appropriate investigations/management.",
+    "estimated_time_min": 20,
+    "version": 1,
+    "is_published": true,
+    "teaching": {
+      "diagnosis": "Myasthenia gravis (fatigable weakness due to impaired neuromuscular transmission, typically mediated by acetylcholine receptor antibodies).",
+      "major_differentials": [
+        "Motor neurone disease",
+        "Muscular dystrophies",
+        "Myotonic dystrophy",
+        "Polymyositis",
+        "Endocrine/toxic myopathies (thyroid disease, Cushing’s, alcohol)",
+        "Lambert–Eaton myasthenic syndrome (paraneoplastic, especially small-cell lung carcinoma)"
+      ],
+      "investigations": [
+        "Serum acetylcholine receptor antibodies (and MuSK antibodies if AChR-negative with high suspicion)",
+        "Electrodiagnostics (repetitive nerve stimulation and/or single-fiber EMG)",
+        "Bedside pharmacologic/ice-pack testing where appropriate and available",
+        "CT (or MRI) chest to assess for thymoma",
+        "Baseline labs and screen for associated autoimmune disease (e.g., thyroid function)"
+      ],
+      "management": [
+        "Neurology referral and assessment of respiratory/bulbar involvement (crisis risk)",
+        "Symptomatic therapy with pyridostigmine",
+        "Immunotherapy (e.g., corticosteroids ± steroid-sparing agents) for persistent or generalized disease",
+        "Thymectomy when indicated (thymoma; or selected non-thymomatous generalized MG)",
+        "Avoid exacerbating medications and provide safety-net advice for deterioration"
+      ],
+      "key_points": [
+        "Weakness is characteristically fatigable (worse with repeated use and later in the day).",
+        "Common early involvement includes extraocular, bulbar, and neck/shoulder girdle muscles.",
+        "Assess for thymoma and plan treatment accordingly."
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm a 43-year-old woman and for about 3 months I've been getting double vision, especially in the evenings.",
+        "tags": ["baseline", "diplopia", "fatigability"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "My eyelids droop when I'm tired and it's worse after I've been looking up for a while.",
+        "tags": ["history", "ptosis", "fatigability"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I've also noticed it's hard to hold my head up later in the day, and chewing gets difficult before I finish a meal.",
+        "tags": ["history", "neck_weakness", "bulbar"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "My husband says my voice gets quieter when I'm tired.",
+        "tags": ["history", "voice_change", "bulbar"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I haven't had numbness or tingling, and I don't have problems with my bladder or bowels. Symptoms tend to be better in the morning and worse in the evening.",
+        "tags": ["history", "neuro_negative", "diurnal_variation"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I've lost about 3 kg over the last 6 months. I don't have any major past illnesses and I take no regular medication.",
+        "tags": ["history", "weight_loss", "pmh", "meds"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I live with my husband and three children. I don't smoke and I drink about 15 units of alcohol per week.",
+        "tags": ["history", "social_history"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s7",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "General exam is normal and I'm not in distress. Cardiovascular, respiratory, and abdominal exams are unremarkable.",
+        "tags": ["exam", "general"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s8",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Cranial nerves: bilateral ptosis that worsens with prolonged upward gaze; pupils are equal and reactive. Eye movements are full at rest.",
+        "tags": ["exam", "ptosis", "cranial_nerves"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s9",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Limb power is grossly normal initially but appears to weaken after repeated testing. Tone, coordination, reflexes, and sensation are normal.",
+        "tags": ["exam", "fatigable_weakness", "neuro_exam"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s10",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Serum acetylcholine receptor antibody test returns positive.",
+        "tags": ["tests", "immunology", "achr_antibody"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s11",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Repetitive nerve stimulation shows a decremental response consistent with a neuromuscular junction disorder.",
+        "tags": ["tests", "emg", "repetitive_stimulation"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s12",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 3,
+        "content": "A short-acting acetylcholinesterase inhibitor challenge produces a brief improvement in ptosis and strength.",
+        "tags": ["tests", "tensilon", "pharmacologic_test"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s13",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "CT thorax is arranged to assess for thymoma; there is no anterior mediastinal mass on imaging.",
+        "tags": ["tests", "imaging", "ct_chest", "thymoma"]
+      },
+      {
+        "chunk_id": "case_myasthenia_gravis_1_v1_s14",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "Arrange neurology follow-up; start symptomatic treatment with pyridostigmine and discuss immunotherapy options if symptoms persist. Provide advice on red flags (worsening swallowing or breathing) and review medications that can worsen myasthenia.",
+        "tags": ["plan", "neurology_referral", "pyridostigmine", "safety_net"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_neurology_weak_hand_13",
+    "title": "A Weak Hand",
+    "dx": "Motor neurone disease (likely amyotrophic lateral sclerosis)",
+    "difficulty": "Hard",
+    "tags": ["Neurology"],
+    "short_prompt": "67-year-old man with hand weakness/wasting and fasciculations, brisk reflexes, no sensory loss, and occasional choking on fluids.",
+    "estimated_time_min": 20,
+    "version": 1,
+    "is_published": true,
+    "case_type": "neurology_cases",
+    "teaching": {
+      "diagnosis": "Motor neurone disease (likely amyotrophic lateral sclerosis pattern with both upper and lower motor neurone involvement).",
+      "prognosis": "Progressive and incurable; mean survival is typically ~2–4 years from presentation. Death commonly results from respiratory complications (e.g., bronchopneumonia).",
+      "major_differentials": [
+        "Myasthenia gravis (fatigable weakness, no LMN wasting/fasciculation)",
+        "Pseudobulbar palsy due to cerebrovascular disease (elderly dysarthria/dysphagia)",
+        "Cervical myelopathy",
+        "Brachial plexus lesion (e.g., trauma or Pancoast tumour)",
+        "Predominantly motor peripheral neuropathy"
+      ],
+      "investigations": [
+        "Electrodiagnostics (EMG/NCS) to support LMN involvement and exclude mimics",
+        "MRI cervical spine if cervical myelopathy is a consideration",
+        "Swallow assessment if bulbar symptoms are present",
+        "Respiratory function monitoring as disease progresses"
+      ],
+      "management": [
+        "Early discussion of diagnosis/prognosis with patient and family",
+        "Multidisciplinary supportive care",
+        "Assistive communication devices as speech deteriorates",
+        "Feeding gastrostomy if required for adequate intake",
+        "Non-invasive ventilation for respiratory failure where appropriate"
+      ],
+      "key_points": [
+        "Motor neurone disease often starts with weakness and wasting of one hand.",
+        "Fasciculations are characteristic.",
+        "The absence of sensory loss helps narrow the differential."
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "My left hand has been getting weaker and thinner, and it seems worse after I've been using it.",
+        "tags": ["baseline", "weakness", "hand"]
+      },
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "He has noticed weakness and wasting of the muscles of his left hand. Weakness is worse after using the hand (e.g., using a screwdriver). He has also noticed cramps in the forearm muscles.",
+        "tags": ["history", "neurology", "cramps", "fatigability"]
+      },
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "On a few occasions recently he has felt choking sensations after taking fluids, and he has had mild slurring of speech.",
+        "tags": ["history", "bulbar_symptoms", "dysphagia", "dysarthria"]
+      },
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s3",
+        "visit_no": 1,
+        "stage": 3,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "Past medical history: hypertension for 15 years and a myocardial infarction 3 years ago. Medications: simvastatin, aspirin, and atenolol.",
+        "tags": ["history", "pmh", "hypertension", "mi", "medications"]
+      },
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s4",
+        "visit_no": 1,
+        "stage": 4,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "He is a retired university lecturer. He lives with his wife, and they have two grown-up children. He is a non-smoker and drinks about a bottle of wine a week.",
+        "tags": ["history", "social_history"]
+      },
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s5",
+        "visit_no": 1,
+        "stage": 5,
+        "kind": "exam",
+        "detail_depth": 3,
+        "content": "Vitals: BP 146/88 mmHg. There are no abnormalities in the cardiovascular or respiratory systems or the abdomen.",
+        "tags": ["exam", "vitals"]
+      },
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s6",
+        "visit_no": 1,
+        "stage": 6,
+        "kind": "exam",
+        "detail_depth": 3,
+        "content": "Neurological exam: wasting of the muscles in the upper limbs, particularly in the left hand. Fasciculations are present in the forearm muscles bilaterally. Power is globally reduced in the left hand and slightly reduced in the right hand. Muscle tone is normal.",
+        "tags": ["exam", "neurology", "wasting", "fasciculations", "weakness"]
+      },
+      {
+        "chunk_id": "case_neurology_weak_hand_13_v1_s7",
+        "visit_no": 1,
+        "stage": 7,
+        "kind": "exam",
+        "detail_depth": 3,
+        "content": "Reflexes: biceps and triceps jerks are brisk bilaterally. There is no sensory loss. Speech is slightly dysarthric.",
+        "tags": ["exam", "brisk_reflexes", "no_sensory_loss", "dysarthria"]
+      }
+    ]
+  }
+  ,
+  {
+    "case_id": "case_easy_bruising_aml_1",
+    "title": "Easy Bruising and Mucosal Bleeding",
+    "dx": "Acute myeloid leukaemia (AML) presenting with severe thrombocytopenia and anaemia",
+    "difficulty": "Hard",
+    "tags": ["Haematology", "Bleeding", "Thrombocytopenia", "Purpura", "Epistaxis", "AML", "Pancytopenia"],
+    "short_prompt": "68-year-old woman with 3 weeks of spontaneous bruising and mucosal bleeding; Hb 5.8 g/dL, platelets 9 x10^9/L, normal clotting. Give differential, key investigations, and initial management.",
+    "estimated_time_min": 25,
+    "version": 1,
+    "is_published": true,
+    "case_type": "haematology_cases",
+    "editorial": {
+      "differential_diagnosis": [
+        "Severe thrombocytopenia/pancytopenia: acute leukaemia (AML/ALL), myelodysplasia, aplastic anaemia",
+        "Nutritional deficiency: vitamin B12 or folate deficiency",
+        "Infection/infiltration: miliary tuberculosis (less common)",
+        "Other bleeding diatheses: ITP, drug-induced thrombocytopenia/platelet dysfunction, vasculitis (eg, HSP), senile purpura/steroid-related bruising, scurvy"
+      ],
+      "further_investigations": [
+        "Repeat FBC with differential and peripheral blood film (look for blasts)",
+        "Coagulation screen (already normal here) ± fibrinogen/D-dimer if DIC suspected",
+        "Bone marrow aspirate/trephine with flow cytometry/cytogenetics",
+        "Group and save/crossmatch; consider haematinics (B12/folate), infection screen as clinically indicated"
+      ],
+      "initial_management": [
+        "Urgent same-day referral/admission under haematology",
+        "Supportive care: transfuse platelets for active bleeding and/or very low counts; transfuse red cells for symptomatic severe anaemia",
+        "Bleeding precautions; avoid antiplatelet/anticoagulant drugs unless essential; treat complications (eg, sepsis) promptly"
+      ],
+      "key_points": [
+        "Mucocutaneous bleeding (purpura, gum bleeding) suggests platelet/vessel wall abnormality more than a coagulation factor deficiency.",
+        "Retinal haemorrhages can occur with combined severe thrombocytopenia and anaemia.",
+        "In older adults, new-onset bruising/bleeding should raise concern for acquired causes including haematological malignancy."
+      ],
+      "source": {
+        "text": "100 Cases in Clinical Medicine",
+        "case_no": 17,
+        "topic": "Haematology"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_easy_bruising_aml_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm a 68-year-old woman and over the last 3 weeks I've been getting spontaneous bruising, mainly on my legs. I also had a major nosebleed, and I've been feeling very tired and short of breath on exertion.",
+        "tags": ["baseline", "bruising", "epistaxis", "fatigue", "dyspnea"]
+      },
+      {
+        "chunk_id": "case_easy_bruising_aml_1_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I can't remember any episodes of trauma. I don't have any significant past medical history and there's no family history of a bleeding disorder. I don't smoke and I drink small amounts of alcohol socially.",
+        "tags": ["history", "no_trauma", "pmh", "family_history", "social_history"]
+      },
+      {
+        "chunk_id": "case_easy_bruising_aml_1_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Exam: multiple areas of purpura on my legs and to a lesser extent on my abdomen and arms; lesions vary in colour from black–purple to yellow. I'm pale with conjunctival pallor. There are two bullae in my mouth with spontaneous bleeding from the gums, and fundoscopy shows multiple small retinal haemorrhages. BP 118/72; cardiovascular, respiratory and abdominal exams are otherwise unremarkable.",
+        "tags": ["exam", "purpura", "pallor", "gum_bleeding", "retinal_hemorrhages", "vitals"]
+      },
+      {
+        "chunk_id": "case_easy_bruising_aml_1_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Investigations: Hb 5.8 g/dL, MCV 83 fL, WCC 14.1 x 10^9/L, platelets 9 x 10^9/L. Sodium 139 mmol/L, potassium 4.6 mmol/L, urea 4.4 mmol/L, creatinine 85 μmol/L, glucose 4.3 mmol/L. Clotting screen is normal.",
+        "tags": ["tests", "cbc", "anemia", "thrombocytopenia", "coagulation", "renal_function"]
+      },
+      {
+        "chunk_id": "case_easy_bruising_aml_1_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 1,
+        "content": "I'm worried because the bruising and bleeding seem to be happening without any injury, and I feel very weak.",
+        "tags": ["plan", "concern", "bleeding"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_tiredness_hypothyroidism_21",
+    "title": "Tiredness",
+    "dx": "Primary hypothyroidism (most likely autoimmune thyroiditis)",
+    "difficulty": "Medium",
+    "tags": ["General Medicine", "Endocrinology"],
+    "short_prompt": "55-year-old man with 18 months fatigue, somnolence, weight gain, constipation, dry scaly skin and bradycardia; likely hypothyroidism.",
+    "estimated_time_min": 20,
+    "version": 1,
+    "is_published": true,
+    "case_type": "endocrinology_cases",
+    "teaching": {
+      "diagnosis": "Hypothyroidism (primary, given high TSH with low free T4), most commonly autoimmune thyroiditis.",
+      "major_differentials": [
+        "Depression",
+        "Obstructive sleep apnoea",
+        "Anaemia (nutritional, chronic disease, malignancy)",
+        "Chronic kidney disease",
+        "Diabetes mellitus"
+      ],
+      "investigations": [
+        "Thyroid function tests (TSH and free T4)",
+        "Thyroid autoantibodies (e.g., TPO antibodies) to support autoimmune thyroiditis",
+        "ECG and cardiovascular risk assessment (bradycardia; start levothyroxine cautiously if coronary disease)",
+        "Consider vitamin B12/folate/iron studies if anaemia is present",
+        "Consider sleep apnoea assessment if symptoms suggest (snoring, witnessed apnoeas, daytime somnolence)"
+      ],
+      "management": [
+        "Levothyroxine replacement titrated to symptoms and TSH",
+        "Start cautiously in older patients or those with coronary heart disease",
+        "Address associated issues (constipation, weight, hyperlipidaemia) and review for other autoimmune disease where appropriate"
+      ],
+      "key_points": [
+        "Hypothyroidism is an important and treatable cause of fatigue.",
+        "Symptoms are often non-specific; examine for bradycardia and dry, scaly skin.",
+        "Mild normocytic/macrocytic anaemia and hypercholesterolaemia can be clues."
+      ],
+      "source": {
+        "text": "100 Cases in Clinical Medicine",
+        "case_no": 21,
+        "topic": "Endocrinology"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've been increasingly tired and lacking energy for about 18 months. I've even fallen asleep at work a few times.",
+        "tags": ["baseline", "fatigue", "somnolence"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s1",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I'm a solicitor. I can't stay awake after about 9:30 pm and I sleep through until 7:30 am. I'm struggling to concentrate at work and I've stopped playing my weekly game of tennis.",
+        "tags": ["history", "daytime_sleepiness", "reduced_exercise_tolerance", "concentration"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s2",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I had depression about 10 years ago related to my first marriage ending, but I don't have any major personal problems at the moment.",
+        "tags": ["history", "psychiatric_history", "depression"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s3",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I've been more constipated recently but I haven't had abdominal pain or any rectal bleeding. I've gained about 8 kg over the last year.",
+        "tags": ["history", "constipation", "weight_gain"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s4",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I haven't had any other major illnesses. My brother developed type 1 diabetes at age 13.",
+        "tags": ["history", "family_history", "autoimmune"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s5",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Exam: overweight with dry, scaly facial skin. Pulse 56/min regular; BP 146/88 mmHg. Cardiovascular, respiratory and abdominal examinations are unremarkable.",
+        "tags": ["exam", "obesity", "dry_skin", "bradycardia", "vitals"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s6",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "exam",
+        "detail_depth": 3,
+        "content": "Neurological exam: mild proximal muscle weakness.",
+        "tags": ["exam", "neurology", "proximal_weakness"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s7",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Investigations: Hb 11.8 g/dL, MCV 96 fL, WCC 4.3 x 10^9/L, platelets 154 x 10^9/L. Sodium 140 mmol/L, potassium 4.4 mmol/L, urea 6.4 mmol/L, creatinine 125 μmol/L, glucose 4.7 mmol/L. Calcium 2.48 mmol/L, phosphate 1.20 mmol/L. Cholesterol 6.4 mmol/L, triglycerides 1.4 mmol/L. Urinalysis: nothing abnormal detected.",
+        "tags": ["tests", "cbc", "anemia", "renal_function", "lipids", "urinalysis"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s8",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "tests",
+        "detail_depth": 3,
+        "content": "Thyroid function tests: TSH 73 mU/L (normal <6), free T4 3 pmol/L (normal 9–22).",
+        "tags": ["tests", "thyroid", "tsh", "t4"]
+      },
+      {
+        "chunk_id": "case_tiredness_hypothyroidism_21_v1_s9",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "Start levothyroxine replacement and recheck TSH/free T4 after dose adjustments. Arrange thyroid autoantibodies to assess for autoimmune thyroiditis, and address constipation, weight and cardiovascular risk factors including hypercholesterolaemia.",
+        "tags": ["plan", "levothyroxine", "follow_up", "autoimmune_workup", "lipids"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_gpa_pulmonary_renal_1",
+    "title": "Shortness of Breath and Reduced Urine Output",
+    "dx": "Granulomatosis with polyangiitis (GPA) causing pulmonary–renal syndrome (alveolar haemorrhage and rapidly progressive glomerulonephritis)",
+    "difficulty": "Hard",
+    "tags": ["Rheumatology", "Nephrology", "Respiratory", "Vasculitis", "Emergency Medicine"],
+    "short_prompt": "73-year-old woman with 4 days of worsening breathlessness, epistaxis and mild haemoptysis, purpuric rash, severe AKI, metabolic acidosis and hyperkalaemia. Determine likely pulmonary–renal diagnosis and urgent investigations/management.",
+    "estimated_time_min": 25,
+    "version": 1,
+    "is_published": true,
+    "editorial": {
+      "likely_diagnosis": "Pulmonary–renal syndrome due to small-vessel vasculitis, most likely granulomatosis with polyangiitis (GPA) given upper respiratory tract involvement (epistaxis).",
+      "major_differentials": [
+        "Microscopic polyangiitis (MPA)",
+        "Anti-glomerular basement membrane (anti-GBM) disease / Goodpasture’s syndrome",
+        "Systemic lupus erythematosus (lupus nephritis with pulmonary haemorrhage)",
+        "Infective endocarditis (immune-complex GN) and other infection-related GN",
+        "Atheroembolic renal disease",
+        "Meningococcal septicaemia (if rapidly progressive purpura and sepsis)"
+      ],
+      "urgent_investigations": [
+        "ABG and continuous oxygen saturation monitoring",
+        "ECG and serial potassium; treat hyperkalaemia immediately",
+        "U&Es/creatinine, bicarbonate, phosphate, calcium; strict fluid balance and urine output monitoring",
+        "Urinalysis and microscopy; urine protein quantification",
+        "Chest X-ray ± CT chest if stable; consider bronchoscopy if diagnosis uncertain",
+        "Autoimmune/vasculitis screen: ANCA (PR3/MPO), anti-GBM, ANA, complements; infection screen and blood cultures",
+        "Renal ultrasound to exclude obstruction and assess kidney size",
+        "Urgent renal biopsy to confirm crescentic GN (once stabilised)"
+      ],
+      "urgent_management": [
+        "A–E approach: high-flow oxygen; early ICU/respiratory and renal team involvement; consider NIV or intubation/ventilation if failing",
+        "Treat hyperkalaemia (IV calcium gluconate, insulin–dextrose, +/- nebulised salbutamol) and metabolic acidosis; organise urgent dialysis/haemofiltration",
+        "Start high-dose corticosteroids promptly once pulmonary–renal vasculitis strongly suspected (after cultures if infection is a concern)",
+        "Induction immunosuppression with cyclophosphamide or rituximab; consider plasma exchange in severe pulmonary haemorrhage/rapidly progressive disease per specialist guidance",
+        "Supportive care: transfuse if significant anaemia/haemorrhage; VTE prophylaxis if safe; manage hypertension"
+      ],
+      "key_points": [
+        "Pulmonary haemorrhage can cause hypoxia and bilateral infiltrates with only small-volume haemoptysis.",
+        "ANCA is positive in most untreated cases of small-vessel vasculitis with pulmonary–renal involvement.",
+        "Rapid recognition and treatment is essential to prevent irreversible organ damage."
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm a 73-year-old woman and I've been getting increasingly short of breath over the last four days.",
+        "tags": ["baseline", "breathlessness"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "For about two months I've felt generally unwell and I've lost about 4 kg.",
+        "tags": ["history", "weight_loss", "constitutional"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I've been having frequent nosebleeds, and over the last few days I've coughed up small amounts of fresh blood.",
+        "tags": ["history", "epistaxis", "hemoptysis", "upper_airway"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s3",
+        "visit_no": 1,
+        "stage": 3,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I've noticed I'm passing much less urine than usual over the last few days.",
+        "tags": ["history", "oliguria", "renal"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s4",
+        "visit_no": 1,
+        "stage": 4,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I don't have any significant past medical history and I'm not on regular medication.",
+        "tags": ["history", "pmh", "meds"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s5",
+        "visit_no": 1,
+        "stage": 5,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Vitals: temperature 38.0 C, HR 104, BP 160/100, RR 30. I'm centrally cyanosed and look unwell. JVP is not raised.",
+        "tags": ["exam", "vitals", "cyanosis", "fever", "tachycardia", "hypertension", "tachypnea"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s6",
+        "visit_no": 1,
+        "stage": 6,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Skin: a purpuric rash is present over my ankles.",
+        "tags": ["exam", "purpura", "vasculitis"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s7",
+        "visit_no": 1,
+        "stage": 7,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Chest: expansion is reduced; percussion and tactile vocal fremitus are normal. There are coarse inspiratory crackles throughout both lung fields.",
+        "tags": ["exam", "respiratory", "crackles"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s8",
+        "visit_no": 1,
+        "stage": 8,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Heart sounds are normal with no added sounds. Abdomen and neurological examinations are normal.",
+        "tags": ["exam", "cardio", "abdomen", "neuro"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s9",
+        "visit_no": 1,
+        "stage": 9,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Urinalysis shows ++ protein and +++ blood.",
+        "tags": ["tests", "urinalysis", "proteinuria", "hematuria"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s10",
+        "visit_no": 1,
+        "stage": 10,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Bloods: Hb 10.1 g/dL, MCV 87 fL, WCC 17.2 x 10^9/L, platelets 540 x 10^9/L. Sodium 137 mmol/L, potassium 6.6 mmol/L, urea 45.1 mmol/L, creatinine 832 μmol/L. Albumin 32 g/L, phosphate 1.9 mmol/L, CRP 323 mg/L.",
+        "tags": ["tests", "cbc", "renal_failure", "hyperkalemia", "crp", "thrombocytosis"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s11",
+        "visit_no": 1,
+        "stage": 11,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Arterial blood gas on air: pH 7.18, pCO2 5.1 kPa, pO2 6.4 kPa.",
+        "tags": ["tests", "abg", "hypoxia", "acidosis"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s12",
+        "visit_no": 1,
+        "stage": 12,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "ECG shows sinus tachycardia.",
+        "tags": ["tests", "ecg", "sinus_tachycardia"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s13",
+        "visit_no": 1,
+        "stage": 13,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Chest X-ray shows bilateral diffuse infiltrates consistent with pulmonary haemorrhage/inflammation.",
+        "tags": ["tests", "imaging", "cxr", "bilateral_infiltrates"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s14",
+        "visit_no": 1,
+        "stage": 14,
+        "kind": "tests",
+        "detail_depth": 3,
+        "content": "ANCA testing returns positive with a PR3 (c-ANCA) pattern, supporting granulomatosis with polyangiitis in the appropriate clinical context.",
+        "tags": ["tests", "anca", "pr3", "vasculitis"]
+      },
+      {
+        "chunk_id": "case_gpa_pulmonary_renal_1_v1_s15",
+        "visit_no": 1,
+        "stage": 15,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "Start high-flow oxygen and treat life-threatening hyperkalaemia immediately while urgent renal replacement therapy and ICU review are arranged. Send vasculitis/autoimmune and infection screens, obtain renal ultrasound, and involve nephrology/rheumatology early for renal biopsy and induction immunosuppression (high-dose steroids plus cyclophosphamide or rituximab; consider plasma exchange in severe disease).",
+        "tags": ["plan", "oxygen", "hyperkalemia", "dialysis", "steroids", "immunosuppression", "plasma_exchange"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_acute_pancreatitis_1",
+    "title": "Severe Epigastric Pain Radiating to the Back",
+    "dx": "Acute pancreatitis (likely alcohol-related; consider gallstones)",
+    "difficulty": "Hard",
+    "tags": ["Gastroenterology", "Abdominal Pain", "Pancreatitis", "Alcohol", "Emergency Medicine"],
+    "short_prompt": "44-year-old woman with severe epigastric pain radiating to the back, vomiting, fever, hypotension and high CRP. Diagnose and outline severity assessment and initial management.",
+    "estimated_time_min": 25,
+    "version": 1,
+    "is_published": true,
+    "case_type": "gastroenterology_cases",
+    "editorial": {
+      "diagnosis": "Acute pancreatitis.",
+      "supporting_features": [
+        "Severe central/epigastric pain radiating to the back with vomiting and fever",
+        "Haemodynamic compromise (tachycardia, low blood pressure) suggesting significant fluid loss",
+        "Peritonism (guarding/rebound tenderness)",
+        "Possible Grey–Turner’s sign (flank discoloration) and left pleural effusion",
+        "Inflammatory markers raised (WCC, CRP)"
+      ],
+      "differential_diagnosis": [
+        "Posteriorly perforating duodenal ulcer",
+        "Biliary disease (biliary colic/cholecystitis/cholangitis)",
+        "Mesenteric ischaemia",
+        "Ruptured/expanding abdominal aortic aneurysm",
+        "Myocardial ischaemia (epigastric pain mimic)"
+      ],
+      "assessment_and_investigations": [
+        "Confirm diagnosis: serum lipase (or amylase) — typically diagnostic when ≥3x upper limit of normal with compatible features",
+        "Assess severity and complications: frequent vitals, urine output, U&E/creatinine, glucose, LFTs, calcium, triglycerides, ABG if hypoxic; consider Ranson/Glasgow criteria (or local severity scoring)",
+        "Identify cause: RUQ ultrasound for gallstones/biliary dilatation; alcohol history; medication and metabolic review",
+        "Imaging: CT abdomen reserved for diagnostic uncertainty or to assess severity/necrosis/complications (often after 48–72h if not improving)"
+      ],
+      "initial_management": [
+        "Resuscitate (ABCDE): aggressive IV fluids, oxygen as needed, monitor (incl. urine output) and correct electrolytes",
+        "Analgesia and antiemetics; keep nil by mouth initially",
+        "Early senior review and admission; consider HDU/ICU if severe by clinical course or scoring systems",
+        "Antibiotics are not routinely indicated unless there is evidence of infection (eg, cholangitis, infected necrosis)"
+      ],
+      "key_points": [
+        "Most common causes: alcohol and gallstones.",
+        "Severity assessment and adequate fluid replacement are central to management.",
+        "Look for systemic and local complications (ARDS, organ failure, necrosis, pseudocyst)."
+      ],
+      "source": {
+        "text": "100 Cases in Clinical Medicine",
+        "case_no": 41,
+        "topic": "Abdominal Pain"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm a 44-year-old woman with severe pain in my upper abdomen (epigastrium) that spreads through to my back. It started about 18 hours ago and has been getting worse.",
+        "tags": ["baseline", "abdominal_pain", "epigastric_pain", "radiates_to_back"]
+      },
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I haven't eaten for about 24 hours and I've vomited four times (first altered food, then fluid) without any blood. I've also had some loose bowel motions and I feel feverish and increasingly unwell.",
+        "tags": ["history", "vomiting", "diarrhea", "fever"]
+      },
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I don't have pain when passing urine and no urinary frequency. My last menstrual period was 2 weeks ago. I had a similar but much milder episode lasting 2–3 days about 3–4 months ago. No other significant past medical history.",
+        "tags": ["history", "no_urinary_symptoms", "lmp", "prior_episode", "pmh"]
+      },
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s3",
+        "visit_no": 1,
+        "stage": 3,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I smoke about 15–20 cigarettes per day and I drink around half a bottle of wine each night. I haven't used any recreational drugs.",
+        "tags": ["history", "smoking", "alcohol", "social_history"]
+      },
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s4",
+        "visit_no": 1,
+        "stage": 4,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Exam: I look unwell. Temp 38.8°C, pulse 110/min, BP 102/64 mmHg. There is some dullness to percussion at the left lung base. Abdomen: tenderness in the epigastrium and central abdomen with some guarding and rebound tenderness around the umbilicus. Bowel sounds are sparse. There is a suggestion of skin discoloration in the flanks. Rectal exam is normal with brown poorly formed stool.",
+        "tags": ["exam", "vitals", "fever", "tachycardia", "hypotension", "peritonism", "pleural_effusion", "grey_turner"]
+      },
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s5",
+        "visit_no": 1,
+        "stage": 5,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Investigations: Hb 15.3 g/dL, WCC 15.2 x 10^9/L, platelets 412 x 10^9/L. Sodium 140 mmol/L, potassium 3.5 mmol/L, urea 9.3 mmol/L, creatinine 82 μmol/L, CRP 192 mg/L. Urinalysis: trace protein, trace blood, nitrites negative. Chest X-ray: small left-sided pleural effusion. Abdominal X-ray: normal.",
+        "tags": ["tests", "cbc", "crp", "renal_function", "urinalysis", "imaging", "cxr", "axr"]
+      },
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s6",
+        "visit_no": 1,
+        "stage": 6,
+        "kind": "tests",
+        "detail_depth": 3,
+        "content": "Serum lipase is markedly elevated (more than three times the upper limit of normal), consistent with acute pancreatitis in this clinical context.",
+        "tags": ["tests", "lipase", "amylase", "pancreatitis"]
+      },
+      {
+        "chunk_id": "case_acute_pancreatitis_1_v1_s7",
+        "visit_no": 1,
+        "stage": 7,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "The pain is severe and I feel very unwell — I'm willing to go to hospital if needed.",
+        "tags": ["plan", "analgesia", "admission"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_postop_deterioration_aki_1",
+    "title": "Postoperative Deterioration",
+    "dx": "Postoperative acute kidney injury due to intra-abdominal sepsis (anastomotic leak) and aminoglycoside nephrotoxicity",
+    "difficulty": "Hard",
+    "tags": ["Surgery", "Nephrology", "Sepsis", "ICU", "Acute Kidney Injury", "Pharmacology", "Antibiotics"],
+    "short_prompt": "62-year-old woman 10 days post right hemicolectomy with persistent fevers, new hypotension, oliguria, metabolic acidosis, hyperkalaemia, jaundice, and high gentamicin trough. Identify causes of AKI and urgent investigations/management.",
+    "estimated_time_min": 25,
+    "version": 1,
+    "is_published": true,
+    "editorial": {
+      "causes_of_acute_renal_failure": [
+        "Sepsis-associated AKI due to intra-abdominal sepsis (suspected anastomotic leak with localized peritonitis), causing reduced renal perfusion and inflammatory tubular injury",
+        "Aminoglycoside (gentamicin) nephrotoxicity with acute tubular necrosis (risk increased by prolonged course, older age, and potential volume depletion)",
+        "Contributing postoperative factors: hypotension/hypovolaemia, nephrotoxic co-medications, and microvascular injury/DIC in severe sepsis"
+      ],
+      "further_investigations": [
+        "Immediate A–E review; repeat blood gas and lactate; continuous ECG monitoring and repeat potassium",
+        "FBC, U&Es, LFTs, coagulation profile; repeat blood cultures and septic screen",
+        "Strict fluid balance with hourly urine output; urinalysis and microscopy (casts), consider renal ultrasound to exclude obstruction",
+        "Urgent abdominal imaging (CT/ultrasound) to identify collection or anastomotic leak; urgent surgical review for source control",
+        "Review drug chart; stop nephrotoxins and adjust antibiotic dosing to renal function (check levels where applicable)"
+      ],
+      "management": [
+        "Urgent resuscitation and ICU transfer for invasive monitoring (arterial line/central access) and vasopressors if needed",
+        "Treat hyperkalaemia and severe metabolic acidosis; initiate urgent renal replacement therapy (continuous haemofiltration preferred if haemodynamically unstable)",
+        "Stop gentamicin and rationalize antimicrobials for intra-abdominal sepsis per local policy; manage hypoglycaemia",
+        "Source control once stabilized: image-guided drainage and/or laparotomy with washout and diversion/stoma formation as required"
+      ],
+      "key_points": [
+        "Postoperative AKI is often multifactorial (sepsis, hypotension, nephrotoxins).",
+        "A rising aminoglycoside trough can indicate reduced clearance; toxicity may already be established.",
+        "Early aggressive sepsis management and source control reduces mortality."
+      ],
+      "source": {
+        "text": "100 Cases in Clinical Medicine",
+        "case_no": 42,
+        "topic": "Renal Failure / Postoperative Deterioration"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm a 62-year-old woman, 10 days after a right hemicolectomy for caecal cancer, and I've become much more unwell.",
+        "tags": ["baseline", "postoperative", "deterioration"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "The surgery itself was uneventful, but I've had a prolonged ileus with abdominal pain. From day 5 after surgery I started spiking fevers up to 38.5°C.",
+        "tags": ["history", "ileus", "abdominal_pain", "fever"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I received cefuroxime and metronidazole as routine prophylaxis, and gentamicin was added (80 mg every 8 hours). Despite antibiotics, I've remained persistently febrile and blood cultures have been negative.",
+        "tags": ["history", "antibiotics", "gentamicin", "cultures_negative"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s3",
+        "visit_no": 1,
+        "stage": 3,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "In the last 24 hours I've become relatively hypotensive (systolic around 95) despite IV colloids, and I'm passing very little urine (about 15 mL per hour).",
+        "tags": ["history", "hypotension", "oliguria", "aki"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s4",
+        "visit_no": 1,
+        "stage": 4,
+        "kind": "history",
+        "detail_depth": 1,
+        "content": "I was otherwise fit with no significant past medical history and I take no regular medication. My pre-op creatinine was 76 μmol/L.",
+        "tags": ["history", "pmh", "baseline_creatinine"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s5",
+        "visit_no": 1,
+        "stage": 5,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Exam: I'm unwell and sweating profusely and I'm jaundiced. Vitals: HR 110 regular, BP 95/60, RR 30/min. JVP is not raised.",
+        "tags": ["exam", "vitals", "tachycardia", "hypotension", "tachypnea", "jaundice"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s6",
+        "visit_no": 1,
+        "stage": 6,
+        "kind": "exam",
+        "detail_depth": 1,
+        "content": "Heart sounds are normal with no added sounds. Breath sounds are normal.",
+        "tags": ["exam", "cardio", "respiratory"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s7",
+        "visit_no": 1,
+        "stage": 7,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Abdomen is tender with guarding over the right iliac fossa. Bowel sounds are absent.",
+        "tags": ["exam", "abdomen", "guarding", "peritonism", "ileus"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s8",
+        "visit_no": 1,
+        "stage": 8,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Bloods: Hb 8.2 g/dL, MCV 83 fL, WCC 26.3 x 10^9/L, platelets 94 x 10^9/L. Sodium 126 mmol/L, potassium 5.8 mmol/L, bicarbonate 6 mmol/L, urea 36.2 mmol/L, creatinine 523 μmol/L. Glucose 2.6 mmol/L. Albumin 31 g/L, bilirubin 95, ALT 63 IU/L, ALP 363 IU/L.",
+        "tags": ["tests", "cbc", "electrolytes", "hyperkalemia", "metabolic_acidosis", "aki", "lfts", "hypoglycemia"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s9",
+        "visit_no": 1,
+        "stage": 9,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Trough gentamicin level is 4.8 mg/L (target <2.0 mg/L).",
+        "tags": ["tests", "drug_level", "gentamicin", "nephrotoxicity"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s10",
+        "visit_no": 1,
+        "stage": 10,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Urinalysis: + blood and + protein; urine microscopy shows granular casts and epithelial cells.",
+        "tags": ["tests", "urinalysis", "casts", "acute_tubular_necrosis"]
+      },
+      {
+        "chunk_id": "case_postop_deterioration_aki_1_v1_s11",
+        "visit_no": 1,
+        "stage": 11,
+        "kind": "plan",
+        "detail_depth": 3,
+        "content": "This is septic shock with severe AKI and probable aminoglycoside toxicity: escalate to ICU for invasive monitoring and vasopressors, stop gentamicin and adjust antibiotics, correct hypoglycaemia, treat hyperkalaemia and severe acidosis, and start urgent renal replacement therapy (continuous haemofiltration if unstable). Arrange urgent abdominal imaging and surgical review for source control (suspected anastomotic leak/collection).",
+        "tags": ["plan", "icu", "sepsis", "source_control", "dialysis", "stop_gentamicin"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_chronic_tension_headache_1",
+    "title": "Chronic Headaches With Low Mood Symptoms",
+    "dx": "Chronic tension-type headache",
+    "difficulty": "Medium",
+    "tags": ["Neurology", "Headache", "Primary Care", "Mental Health"],
+    "short_prompt": "44-year-old woman with long-standing headaches now more intense: bilateral, worse as the day progresses, no vomiting or visual disturbance. Explore differentials and management including stress/depression and reassurance.",
+    "estimated_time_min": 20,
+    "version": 1,
+    "is_published": true,
+    "case_type": "neurology_cases",
+    "editorial": {
+      "diagnosis": "Chronic tension-type headache.",
+      "major_differentials": [
+        "Migraine",
+        "Cluster headache",
+        "Headache due to space-occupying lesion (tumour/abscess)",
+        "Sinusitis",
+        "Dental disorders",
+        "Cervical spondylosis",
+        "Glaucoma",
+        "Post-traumatic headache"
+      ],
+      "management": [
+        "Make a positive diagnosis after excluding red flags; provide reassurance based on a normal neurological exam and normal fundoscopy",
+        "Explore psychosocial stressors and address health anxiety (family history of brain tumour) and screen for depression/anxiety; treat if present",
+        "Review analgesic use and counsel on avoiding medication-overuse headache; use simple analgesia intermittently and avoid frequent NSAID/paracetamol use",
+        "Encourage sleep hygiene, regular meals, hydration, exercise, and headache diary; consider referral/psychological therapies if stress-related",
+        "Consider CT head (or other imaging) if red flags, abnormal exam, or for reassurance in selected cases after discussion"
+      ],
+      "key_points": [
+        "Tension headaches are common under age 50 and are typically bilateral with a pressure/tightness quality and no vomiting/visual aura.",
+        "Symptoms of depression and life stressors frequently coexist and should be actively assessed."
+      ],
+      "source": {
+        "text": "100 Cases in Clinical Medicine",
+        "case_no": 48,
+        "topic": "Headaches"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I'm a 44-year-old woman and I've been getting headaches that I've had in previous years, but they've become more intense recently. They're severe and on both sides of my head, and they tend to get worse as the day goes on.",
+        "tags": ["baseline", "headache", "bilateral"]
+      },
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "There's no associated visual disturbance and I haven't been vomiting.",
+        "tags": ["history", "no_visual_symptoms", "no_vomiting"]
+      },
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I've lost my appetite and I've been sleeping badly, waking early in the mornings.",
+        "tags": ["history", "loss_of_appetite", "insomnia", "early_waking"]
+      },
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s3",
+        "visit_no": 1,
+        "stage": 3,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "In the past I've been told I have eczema and irritable bowel syndrome, but they're not bothering me currently.",
+        "tags": ["history", "eczema", "ibs", "pmh"]
+      },
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s4",
+        "visit_no": 1,
+        "stage": 4,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I'm divorced and I look after my two children (aged 10 and 12). I work part-time as an office cleaner. My mother recently died of a brain tumour, and I'm worried about what these headaches could mean.",
+        "tags": ["history", "psychosocial", "bereavement", "health_anxiety", "family_history"]
+      },
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s5",
+        "visit_no": 1,
+        "stage": 5,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "I smoke about 20 cigarettes per day and drink around 15 units of alcohol per week. I take regular paracetamol or ibuprofen for my headaches.",
+        "tags": ["history", "smoking", "alcohol", "analgesics", "medication_overuse_risk"]
+      },
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s6",
+        "visit_no": 1,
+        "stage": 6,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Exam: I look withdrawn. Pulse 74/min regular; BP 118/76 mmHg. Cardiovascular, respiratory and gastrointestinal examinations are normal. There are no abnormal neurological signs and fundoscopy is normal.",
+        "tags": ["exam", "vitals", "neurology", "fundoscopy", "normal_exam"]
+      },
+      {
+        "chunk_id": "case_chronic_tension_headache_1_v1_s7",
+        "visit_no": 1,
+        "stage": 7,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "I'd like to understand what's causing the headaches and whether I need any scans, and I want something that helps without having to take painkillers all the time.",
+        "tags": ["plan", "reassurance", "imaging_concern", "analgesia"]
+      }
+    ]
+  },
+  {
+    "case_id": "case_tiredness_coeliac_54",
+    "title": "Tiredness and Increased Bowel Motions",
+    "dx": "Coeliac disease with malabsorption causing mixed deficiency anaemia (iron + folate) and hyposplenism",
+    "difficulty": "Medium",
+    "tags": ["General Medicine", "Gastroenterology", "Haematology"],
+    "short_prompt": "22-year-old woman with fatigue and increased bowel motions; pale, underweight, dimorphic anaemia with low folate and Howell–Jolly bodies.",
+    "estimated_time_min": 20,
+    "version": 1,
+    "is_published": true,
+    "case_type": "gastroenterology_cases",
+    "teaching": {
+      "interpretation": "A dimorphic film (mixed small and large red cells) suggests combined iron deficiency and folate deficiency. Howell–Jolly bodies indicate hyposplenism, which can occur with splenic atrophy in coeliac disease.",
+      "diagnosis": "Malabsorption due to coeliac disease (gluten-sensitive enteropathy) affecting the proximal small bowel.",
+      "major_differentials": [
+        "Iron deficiency anaemia from other causes",
+        "Inflammatory bowel disease",
+        "Anorexia nervosa/relative energy deficiency",
+        "Depression or other psychiatric illness",
+        "Other malabsorption syndromes"
+      ],
+      "investigations": [
+        "Coeliac serology: IgA anti-tissue transglutaminase (tTG) ± IgA endomysial antibodies, plus total IgA level",
+        "Upper GI endoscopy with duodenal biopsies (distal duodenum) to confirm villous atrophy",
+        "Iron studies and repeat folate/B12 to characterize deficiency pattern",
+        "Consider HLA-DQ2/DQ8 testing if diagnosis remains uncertain"
+      ],
+      "management": [
+        "Gluten-free diet with dietitian support",
+        "Replace deficiencies (iron and folate) and monitor Hb/indices",
+        "Follow-up to ensure symptomatic and biochemical recovery; repeat biopsy if clinically indicated and to assess response"
+      ],
+      "key_points": [
+        "Howell–Jolly bodies are characteristic of hyposplenism.",
+        "Coeliac disease can present with non-specific symptoms without abdominal pain or overt steatorrhoea.",
+        "Typical features of fat malabsorption may be absent with low fat intake."
+      ],
+      "source": {
+        "text": "100 Cases in Clinical Medicine",
+        "case_no": 54,
+        "topic": "Gastroenterology"
+      }
+    },
+    "chunks": [
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s0",
+        "visit_no": 1,
+        "stage": 0,
+        "kind": "baseline",
+        "detail_depth": 1,
+        "content": "I've been feeling tired for about 6 months.",
+        "tags": ["baseline", "fatigue"]
+      },
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s1",
+        "visit_no": 1,
+        "stage": 1,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "Over the years my bowel movements have gradually increased from once a day to two or three times daily. I have no abdominal pain and my appetite hasn't changed.",
+        "tags": ["history", "bowel_habit_change"]
+      },
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s2",
+        "visit_no": 1,
+        "stage": 2,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "Sometimes the bowel movements can be difficult to flush away, but this isn't consistent. I'm a non-smoker and drink alcohol rarely. I've been vegetarian for 5 years but I eat dairy foods and fish regularly.",
+        "tags": ["history", "possible_steatorrhoea", "diet", "social_history"]
+      },
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s3",
+        "visit_no": 1,
+        "stage": 3,
+        "kind": "history",
+        "detail_depth": 2,
+        "content": "My grandmother (from Ireland) had some bowel problems. I'm an infant-school teacher, enjoy my work, and I do frequent keep-fit classes at the gym.",
+        "tags": ["history", "family_history", "social_history", "exercise"]
+      },
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s4",
+        "visit_no": 1,
+        "stage": 4,
+        "kind": "exam",
+        "detail_depth": 2,
+        "content": "Exam: height 1.62 m and weight 49 kg. She looks a little pale and thin. Abdominal examination is normal and there are no other significant abnormalities.",
+        "tags": ["exam", "pallor", "underweight", "abdomen_normal"]
+      },
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s5",
+        "visit_no": 1,
+        "stage": 5,
+        "kind": "tests",
+        "detail_depth": 2,
+        "content": "Investigations: Hb 9.8 g/dL, MCV 98 fL, WCC 6.5 x 10^9/L, platelets 247 x 10^9/L. Red cell folate 44 mg/L (low). Vitamin B12 280 ng/L (normal). TSH 3.5 mU/L and free T4 12.9 pmol/L (both normal).",
+        "tags": ["tests", "cbc", "anemia", "folate_deficiency", "thyroid"]
+      },
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s6",
+        "visit_no": 1,
+        "stage": 6,
+        "kind": "tests",
+        "detail_depth": 3,
+        "content": "Blood film: dimorphic red cell population with remnants of nuclear material (Howell–Jolly bodies) in some red blood cells.",
+        "tags": ["tests", "blood_film", "howell_jolly_bodies", "hyposplenism"]
+      },
+      {
+        "chunk_id": "case_tiredness_coeliac_54_v1_s7",
+        "visit_no": 1,
+        "stage": 7,
+        "kind": "plan",
+        "detail_depth": 2,
+        "content": "Arrange coeliac serology (IgA tTG with total IgA) and confirm with duodenal biopsies while still on a gluten-containing diet. Start deficiency replacement (folate and iron if iron deficiency is confirmed) and refer for dietitian-led gluten-free diet counselling if coeliac disease is confirmed.",
+        "tags": ["plan", "coeliac_workup", "endoscopy", "gluten_free_diet", "folate", "iron"]
       }
     ]
   }

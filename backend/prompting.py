@@ -21,12 +21,22 @@ def build_allowed_facts(
     max_depth = max_detail_depth(level, visit_no)
     allowed_tool_set = allowed_tools(level, visit_no)
 
+    def _as_int(val: Any, default: int) -> int:
+        if val is None:
+            return default
+        if isinstance(val, str) and not val.strip():
+            return default
+        try:
+            return int(val)
+        except (TypeError, ValueError):
+            return default
+
     chunks = case_doc.get("chunks", []) or []
     sorted_chunks = sorted(
         chunks,
         key=lambda ch: (
-            int(ch.get("visit_no", 0)),
-            int(ch.get("stage", 0)),
+            _as_int(ch.get("visit_no"), 1),
+            _as_int(ch.get("stage"), 0),
             str(ch.get("chunk_id", "")),
         ),
     )
@@ -36,9 +46,9 @@ def build_allowed_facts(
         cid = ch.get("chunk_id")
         if not cid or cid in disclosed:
             continue
-        if int(ch.get("visit_no", 0)) != int(visit_no):
+        if _as_int(ch.get("visit_no"), 1) != int(visit_no):
             continue
-        if int(ch.get("detail_depth", 1)) > int(max_depth):
+        if _as_int(ch.get("detail_depth"), 1) > int(max_depth):
             continue
 
         kind = str(ch.get("kind", "") or "")

@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, Optional
 
 import requests
+from requests import RequestException
 from dotenv import load_dotenv
 
 _ENV_PATH = os.path.join(os.path.dirname(__file__), ".env")
@@ -63,16 +64,23 @@ class SupabaseClient:
         params: Optional[Dict[str, str]] = None,
         json_body: Optional[Any] = None,
         prefer: Optional[str] = None,
+        return_headers: bool = False,
     ) -> Any:
         url = f"{self._base_url}/{path.lstrip('/')}" if path else self._base_url
-        resp = self._session.request(
-            method,
-            url,
-            params=params,
-            json=json_body,
-            headers=self._headers(prefer),
-            timeout=self._cfg.timeout_s,
-        )
+        try:
+            resp = self._session.request(
+                method,
+                url,
+                params=params,
+                json=json_body,
+                headers=self._headers(prefer),
+                timeout=self._cfg.timeout_s,
+            )
+        except RequestException as exc:
+            raise SupabaseError(
+                f"Supabase request failed ({method} {url})",
+                response_text=str(exc),
+            ) from exc
         if not resp.ok:
             raise SupabaseError(
                 f"Supabase request failed ({method} {url})",
@@ -80,14 +88,18 @@ class SupabaseClient:
                 response_text=resp.text,
             )
         if not resp.text:
-            return None
+            return (None, dict(resp.headers)) if return_headers else None
         try:
-            return resp.json()
+            body = resp.json()
         except ValueError:
-            return resp.text
+            body = resp.text
+        return (body, dict(resp.headers)) if return_headers else body
 
     def table(self, name: str) -> "SupabaseTable":
         return SupabaseTable(self, name)
+
+    def rpc(self, fn: str, args: Dict[str, Any]) -> Any:
+        return self.request("POST", f"rpc/{fn}", json_body=args) or []
 
 
 class SupabaseTable:
@@ -101,7 +113,9 @@ class SupabaseTable:
         filters: Optional[Dict[str, Any]] = None,
         columns: str = "*",
         limit: Optional[int] = None,
+        offset: Optional[int] = None,
         order: Optional[Any] = None,
+        raw_params: Optional[Dict[str, str]] = None,
     ) -> Any:
         params: Dict[str, str] = {"select": columns}
         _apply_filters(params, filters)
@@ -113,7 +127,57 @@ class SupabaseTable:
                 params["order"] = str(order)
         if limit is not None:
             params["limit"] = str(int(limit))
+        if offset is not None:
+            params["offset"] = str(int(offset))
+        if raw_params:
+            params.update({str(k): str(v) for k, v in raw_params.items()})
         return self._client.request("GET", self._name, params=params) or []
+
+    def select_with_count(
+        self,
+        *,
+        filters: Optional[Dict[str, Any]] = None,
+        columns: str = "*",
+        limit: Optional[int] = None,
+        offset: Optional[int] = None,
+        order: Optional[Any] = None,
+        raw_params: Optional[Dict[str, str]] = None,
+    ) -> Any:
+        """
+        Returns (rows, total_count) when PostgREST provides Content-Range.
+        """
+        params: Dict[str, str] = {"select": columns}
+        _apply_filters(params, filters)
+        if order:
+            if isinstance(order, (tuple, list)) and len(order) == 2:
+                col, direction = order
+                params["order"] = f"{col}.{direction}"
+            else:
+                params["order"] = str(order)
+        if limit is not None:
+            params["limit"] = str(int(limit))
+        if offset is not None:
+            params["offset"] = str(int(offset))
+        if raw_params:
+            params.update({str(k): str(v) for k, v in raw_params.items()})
+
+        body, headers = self._client.request(
+            "GET",
+            self._name,
+            params=params,
+            prefer="count=exact",
+            return_headers=True,
+        )
+        rows = body or []
+        total = None
+        content_range = (headers or {}).get("Content-Range") or (headers or {}).get("content-range")
+        if isinstance(content_range, str) and "/" in content_range:
+            total_str = content_range.split("/")[-1].strip()
+            if total_str.isdigit():
+                total = int(total_str)
+        if total is None:
+            total = len(rows) if isinstance(rows, list) else 0
+        return rows, total
 
     def insert(self, rows: Any, *, returning: bool = True) -> Any:
         payload = rows if isinstance(rows, list) else [rows]
@@ -130,6 +194,14 @@ class SupabaseTable:
 _client: Optional[SupabaseClient] = None
 
 
+def _format_filter_value(value: Any) -> str:
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if value is None:
+        return "null"
+    return str(value)
+
+
 def _apply_filters(params: Dict[str, str], filters: Optional[Dict[str, Any]]) -> None:
     if not filters:
         return
@@ -138,14 +210,14 @@ def _apply_filters(params: Dict[str, str], filters: Optional[Dict[str, Any]]) ->
             op, raw_val = value
             if op == "in":
                 if isinstance(raw_val, (list, tuple)):
-                    joined = ",".join(str(v) for v in raw_val)
+                    joined = ",".join(_format_filter_value(v) for v in raw_val)
                 else:
-                    joined = str(raw_val)
+                    joined = _format_filter_value(raw_val)
                 params[key] = f"in.({joined})"
             else:
-                params[key] = f"{op}.{raw_val}"
+                params[key] = f"{op}.{_format_filter_value(raw_val)}"
         else:
-            params[key] = f"eq.{value}"
+            params[key] = f"eq.{_format_filter_value(value)}"
 
 
 def _read_env(*keys: str) -> Optional[str]:
