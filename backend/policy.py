@@ -6,13 +6,8 @@ from typing import Set
 def max_detail_depth(level: int, visit_no: int) -> int:
     """
     Determine how granular the patient disclosure can be.
-    Level is ignored; only visit number gates disclosure depth.
+    The current default workflow is single-visit, so allow full detail.
     """
-    visit_no = max(1, int(visit_no))
-    if visit_no == 1:
-        return 1
-    if visit_no == 2:
-        return 2
     return 3
 
 
@@ -32,11 +27,7 @@ def max_visits(level: int) -> int:
 
 def allowed_tools(level: int, visit_no: int) -> Set[str]:
     """
-    Whitelist doctor actions unlocked by visit.
-    Level is ignored; visit number gates exams/tests.
+    Whitelist doctor actions available during chat.
+    The current default workflow is single-visit, so tests are always available.
     """
-    visit_no = max(1, int(visit_no))
-    allowed = {"history", "exam"}
-    if visit_no >= 2:
-        allowed.add("tests")
-    return allowed
+    return {"history", "exam", "tests"}

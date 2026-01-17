@@ -26,10 +26,21 @@ class DisclosureContext:
 def _eligible_chunks(case_doc: Dict[str, Any], ctx: DisclosureContext) -> List[Dict[str, Any]]:
     chunks = case_doc.get("chunks", [])
     out = []
+
+    def _as_int(val: Any, default: int) -> int:
+        if val is None:
+            return default
+        if isinstance(val, str) and not val.strip():
+            return default
+        try:
+            return int(val)
+        except (TypeError, ValueError):
+            return default
+
     for ch in chunks:
-        if int(ch.get("visit_no", 0)) != int(ctx.visit_no):
+        if _as_int(ch.get("visit_no"), 1) != int(ctx.visit_no):
             continue
-        if int(ch.get("detail_depth", 1)) > int(ctx.max_depth):
+        if _as_int(ch.get("detail_depth"), 1) > int(ctx.max_depth):
             continue
         kind = ch.get("kind", "symptoms")
         if kind == "tests" and "tests" not in ctx.allowed_tools:

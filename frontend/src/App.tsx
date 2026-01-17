@@ -1,8 +1,15 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
 import { supabase } from "./lib/supabaseClient";
+import { safeStorage } from "./lib/safeStorage";
+import { getMe } from "./lib/api";
 import Landing from "./pages/Landing";
 import Chat from "./pages/Chat";
+import ProblemSet from "./pages/ProblemSet";
+import SubmissionViewer from "./pages/SubmissionViewer";
+import ProblemWorkspace from "./pages/ProblemWorkspace";
+import Profile from "./pages/Profile";
+import UserIdRedirect from "./pages/UserIdRedirect";
 
 export type AuthMode = "none" | "guest" | "google";
 
@@ -16,6 +23,7 @@ export type AuthState = {
 type AuthContextValue = {
   auth: AuthState;
   authReady: boolean;
+  me: { user_id: string; username: string; display_name: string } | null;
   setGuestMode: (guestId: string) => void;
   signOut: () => Promise<void>;
 };
@@ -41,7 +49,7 @@ export const useAuth = () => {
 };
 
 const readStoredMode = (): AuthMode | null => {
-  const raw = localStorage.getItem(AUTH_MODE_KEY);
+  const raw = safeStorage.getItem(AUTH_MODE_KEY);
   if (raw === "guest" || raw === "google") {
     return raw;
   }
@@ -50,7 +58,7 @@ const readStoredMode = (): AuthMode | null => {
 
 const resolveAuthState = (session: { access_token?: string; user?: { email?: string } } | null): AuthState => {
   const storedMode = readStoredMode();
-  const guestId = localStorage.getItem(GUEST_ID_KEY);
+  const guestId = safeStorage.getItem(GUEST_ID_KEY);
 
   if (storedMode === "google" && session?.access_token) {
     return {
@@ -85,6 +93,7 @@ const resolveAuthState = (session: { access_token?: string; user?: { email?: str
 export default function App() {
   const [auth, setAuth] = useState<AuthState>(EMPTY_AUTH);
   const [authReady, setAuthReady] = useState(false);
+  const [me, setMe] = useState<{ user_id: string; username: string; display_name: string } | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -93,7 +102,7 @@ export default function App() {
       const { data } = await supabase.auth.getSession();
       if (!isMounted) return;
       if (data.session?.access_token) {
-        localStorage.setItem(AUTH_MODE_KEY, "google");
+        safeStorage.setItem(AUTH_MODE_KEY, "google");
       }
       setAuth(resolveAuthState(data.session));
       setAuthReady(true);
@@ -103,7 +112,7 @@ export default function App() {
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session?.access_token) {
-        localStorage.setItem(AUTH_MODE_KEY, "google");
+        safeStorage.setItem(AUTH_MODE_KEY, "google");
       }
       setAuth(resolveAuthState(session));
       setAuthReady(true);
@@ -115,9 +124,35 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!authReady || auth.mode === "none") {
+      setMe(null);
+      return;
+    }
+    let cancelled = false;
+    const run = async () => {
+      try {
+        const response = await getMe({ mode: auth.mode, accessToken: auth.accessToken, guestId: auth.guestId });
+        if (!cancelled) {
+          setMe({
+            user_id: response.user.user_id,
+            username: response.user.username,
+            display_name: response.user.display_name,
+          });
+        }
+      } catch {
+        if (!cancelled) setMe(null);
+      }
+    };
+    run();
+    return () => {
+      cancelled = true;
+    };
+  }, [authReady, auth.mode, auth.accessToken, auth.guestId]);
+
   const setGuestMode = (guestId: string) => {
-    localStorage.setItem(GUEST_ID_KEY, guestId);
-    localStorage.setItem(AUTH_MODE_KEY, "guest");
+    safeStorage.setItem(GUEST_ID_KEY, guestId);
+    safeStorage.setItem(AUTH_MODE_KEY, "guest");
     setAuth({
       mode: "guest",
       accessToken: null,
@@ -128,22 +163,22 @@ export default function App() {
 
   const signOut = async () => {
     if (auth.mode === "guest") {
-      localStorage.removeItem(GUEST_ID_KEY);
-      localStorage.removeItem(AUTH_MODE_KEY);
+      safeStorage.removeItem(GUEST_ID_KEY);
+      safeStorage.removeItem(AUTH_MODE_KEY);
       setAuth(EMPTY_AUTH);
       return;
     }
 
     if (auth.mode === "google") {
       await supabase.auth.signOut();
-      localStorage.removeItem(AUTH_MODE_KEY);
+      safeStorage.removeItem(AUTH_MODE_KEY);
       setAuth(EMPTY_AUTH);
     }
   };
 
   const contextValue = useMemo(
-    () => ({ auth, authReady, setGuestMode, signOut }),
-    [auth, authReady]
+    () => ({ auth, authReady, me, setGuestMode, signOut }),
+    [auth, authReady, me]
   );
 
   return (
@@ -151,10 +186,25 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/chat" element={<Chat />} />
+          <Route path="/chat" element={<Navigate to="/problemset" replace />} />
+          <Route path="/chat/:caseId" element={<Chat />} />
+          <Route path="/problem/:caseId" element={<ProblemWorkspace />} />
+          <Route path="/problem/:caseId/submission" element={<ProblemWorkspaceTabRedirect tab="submission" />} />
+          <Route path="/problem/:caseId/submissions" element={<ProblemWorkspaceTabRedirect tab="solutions" />} />
+          <Route path="/submission/:sessionId" element={<SubmissionViewer />} />
+          <Route path="/u/:username" element={<Profile />} />
+          <Route path="/user/:userId" element={<UserIdRedirect />} />
+          <Route path="/problemset" element={<ProblemSet />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthContext.Provider>
   );
+}
+
+function ProblemWorkspaceTabRedirect({ tab }: { tab: string }) {
+  const params = useParams();
+  const caseId = params.caseId ?? "";
+  const safeTab = encodeURIComponent(tab);
+  return <Navigate to={`/problem/${encodeURIComponent(caseId)}?tab=${safeTab}`} replace />;
 }
